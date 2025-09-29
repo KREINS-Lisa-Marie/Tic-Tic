@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tictic/constants/fonts.dart';
 
+import 'fonts.dart' show kButtonTextStyle;
+
 const kMainColor = Color.fromRGBO(52, 78, 65, 1);
 const kSecondaryColor = Color.fromRGBO(88, 129, 87, 1);
 const kTertiaryColor = Color.fromRGBO(163, 177, 138, 1);
@@ -14,7 +16,7 @@ final kShadow = BoxShadow(
   offset: const Offset(0, 3), // changes position of shadow
 );
 
-final appTheme = ThemeData(
+final kAppTheme = ThemeData(
   useMaterial3: true,
   // recommandé avec ColorScheme
   colorScheme: ColorScheme(
@@ -51,7 +53,7 @@ final appTheme = ThemeData(
 
   appBarTheme: const AppBarTheme(
     backgroundColor: kMainColor,
-    foregroundColor: Colors.white,
+    //foregroundColor: Colors.white,
     elevation: 0,
     centerTitle: true,
   ),
@@ -59,6 +61,7 @@ final appTheme = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       textStyle: kButtonTextStyle,
+      // to do Replace
       backgroundColor: kSecondaryColor,
       foregroundColor: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
