@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tictic/l10n/app_localizations.dart';
 
-import '../../constants/sizes.dart';
+import '../../../constants/sizes.dart';
 
 class LogoWelcome extends StatelessWidget {
   const LogoWelcome ({super.key});
@@ -12,7 +13,7 @@ class LogoWelcome extends StatelessWidget {
       "assets/icons/logo.svg",
       height: MediaQuery.of(context).size.height*kLogoSizeRatioWelcome,
       width: MediaQuery.of(context).size.height*kLogoSizeRatioWelcome,
-      semanticsLabel: 'Le Logo de TicTic',
+      semanticsLabel: AppLocalizations.of(context)?.semanticLabel,
     );
   }
 }

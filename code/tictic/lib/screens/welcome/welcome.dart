@@ -1,60 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tictic/constants/sizes.dart';
-import 'package:tictic/screens/widgets/logo_welcome.dart';
+import 'package:tictic/screens/scaffold_with_image.dart';
+import 'package:tictic/screens/welcome/widgets/call_to_actions.dart';
+import 'package:tictic/screens/welcome/widgets/logo_welcome.dart';
+import 'package:tictic/screens/welcome/widgets/text_slider_with_bullets.dart';
+
 
 class Welcome extends StatelessWidget {
-  Welcome({super.key});
+  const Welcome({super.key});
 
-  final PageController _pageController = PageController(viewportFraction: 1);
-  int _currentPage = 0;
-
-  final _items = [
-    'L’harmonie financière dans vos groupes, en toute simplicité !',
-    'Calculs instantanés, équité garantie avec TicTic !',
-    'Calculs fastidieux ? Non merci. Optez pour la simplicité avec TicTic !',
-    'TicTic : Vos dépenses partagées en toute simplicité !',
-  ];
-
+  static const String routeName = '/';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScaffoldWithImage(
+      child: Column(
+        children: [
+          Spacer(),
+          LogoWelcome(),
+          /*SizedBox(height: kVerticalPadding),*/
+          Spacer(),
+          TextSliderWithBullets(),
+          Spacer(),
+          CallToActions(),
+        ],
+      ),
+    );
+  }
+}
+
+/* _onPageChanged(index) {
+    setState(() {
+      currentSliderIndex = index;
+    });
+  }*/
+
+/*Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/img/back1.png"),
             fit: BoxFit.cover,
-        ),
+          ),
         ),
         child: SafeArea(
           child: Column(
             children: [
+              Spacer(),
               LogoWelcome(),
-              SizedBox(
-                // todo : fix
-                height: kTextSliderHeight,
-                child: PageView.builder(
-                  scrollDirection: Axis.horizontal,
-                  controller: PageController(),
-                  itemCount: _items.length,
-                    itemBuilder: (context, index){
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-                      child: Text(_items[index]),
-                    );
-                }),
-              ),
-         Row(
-           children: _items.map((){
-             return Container();
-           }).toList(),
-         )
+              /*SizedBox(height: kVerticalPadding),*/
+              Spacer(),
+              TextSliderWithBullets(),
+              Spacer(),
+              CallToActions(),
             ],
           ),
         ),
       ),
-    );
-  }
-}
+    );*/
