@@ -6,7 +6,12 @@ import '../../../constants/sizes.dart';
 import 'bullet.dart';
 
 class Bullets extends StatelessWidget {
-  const Bullets({super.key, required this.items, required this.pageController, required this.currentIdx});
+  const Bullets({
+    super.key,
+    required this.items,
+    required this.pageController,
+    required this.currentIdx,
+  });
 
   final List<String> items;
   final PageController pageController;
@@ -16,8 +21,7 @@ class Bullets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children:
-      items.map((item){
+      children: items.map((item) {
         return GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
@@ -29,13 +33,13 @@ class Bullets extends StatelessWidget {
             /*debugPrint("tapped");*/
           },
           child: Bullet(
-            marginRight:  items.indexOf(item) == items.length-1
+            marginRight: items.indexOf(item) == items.length - 1
                 ? 0
                 : kHorizontalPaddingL,
             width:
-            (((MediaQuery.of(context).size.width -
-                kHorizontalPaddingXL -
-                (items.length-1) *kHorizontalPaddingL)/
+                (((MediaQuery.of(context).size.width -
+                    kHorizontalPaddingXL -
+                    (items.length - 1) * kHorizontalPaddingL) /
                 items.length)),
             color: items.indexOf(item) == currentIdx
                 ? kMainColor

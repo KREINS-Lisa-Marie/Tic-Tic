@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:tictic/constants/sizes.dart';
-import 'package:tictic/screens/register/widgets/call_to_action.dart';
+import 'package:tictic/l10n/app_localizations.dart';
 import 'package:tictic/screens/scaffold_with_image.dart';
+import 'package:tictic/screens/welcome/widgets/logo_welcome.dart';
+import 'package:tictic/widgets/form/email_input.dart';
+import 'package:tictic/widgets/form/username_input.dart';
+import 'package:tictic/widgets/form/password_input.dart';
 
-import '../welcome/widgets/call_to_actions.dart';
+class Register extends StatelessWidget {
+  Register({super.key});
 
-class Register extends StatefulWidget {
-  const Register({super.key});
   static const String routeName = '/register';
 
-  @override
+  /*  @override
   State<Register> createState() => _RegisterState();
-}
+}*/
 
-class _RegisterState extends State<Register> {
+  /*class _RegisterState extends State<Register> {
   String _email = '';
   final _formGlobalKey = GlobalKey<FormState>();
 
-  String _password = '';
+  String _password = '';*/
 
+  final GlobalKey<FormState> _registerFormKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +31,23 @@ class _RegisterState extends State<Register> {
         padding: const EdgeInsets.only(top: kVerticalPadding),
         child: Column(
           /*crossAxisAlignment: CrossAxisAlignment.start,*/
-          children: [Row(
-            children: [
-              SizedBox(width: kHorizontalPadding),
-              ElevatedButton(onPressed: (){
-                Navigator.pop(context);
-              }, child: Icon(Icons.arrow_back)),
-            ],
-          ), Text("Register"),
-            SizedBox(height: kVerticalPadding),
+          children: [
+            Row(
+              children: [
+                SizedBox(width: kHorizontalPadding),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.arrow_back),
+                ),
+              ],
+            ),
+            /*Text("Register"),*/
+            /*            SizedBox(height: kVerticalPadding),
             Text( 'Your email: $_email',textAlign: TextAlign.start,),
             //wieso kann hier nicht textalign start??
-            SizedBox(height: kVerticalPadding),
+            SizedBox(height: kVerticalPadding),*/
             /*Padding(
               padding: const EdgeInsets.only(left: kHorizontalPadding, right: kHorizontalPadding),
               child: TextField(
@@ -53,7 +62,41 @@ class _RegisterState extends State<Register> {
               }
               ),
             ),*/
-            Form(
+            SizedBox(height: kVerticalPaddingL),
+            LogoWelcome(),
+            SizedBox(height: kVerticalPaddingXL),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: kHorizontalPadding,
+              ),
+              child: Form(
+                key: _registerFormKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    UsernameInput(),
+
+                    SizedBox(height: kVerticalPaddingL),
+                    EmailInput(),
+                    SizedBox(height: kVerticalPaddingL),
+                    PasswordInput(),
+
+                    SizedBox(height: kVerticalPaddingL),
+                    ElevatedButton(
+                      onPressed: () {
+                        //print("test");
+                        _registerFormKey.currentState?.validate();
+                      },
+                      child: Text(
+                        AppLocalizations.of(context)!.creatingAccount,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            /*Form(
               key: _formGlobalKey,
               child:
               Column(
@@ -112,16 +155,10 @@ class _RegisterState extends State<Register> {
                   CallToAction(formGlobalKey : _formGlobalKey),
                 ],
               ),
-            ),
-
-            SizedBox(height: kVerticalPadding,),
-
+            ),*/
+            //SizedBox(height: kVerticalPadding),
           ],
-
         ),
-
-
-
       ),
     );
   }

@@ -101,29 +101,53 @@ abstract class AppLocalizations {
   /// **'Application TicTic (en)'**
   String get appTitle;
 
-  /// No description provided for @harmony.
+  /// No description provided for @continueWithOutLogin.
   ///
   /// In en, this message translates to:
-  /// **'Financial harmony in your groups, made easy!'**
-  String get harmony;
+  /// **'Continue without login'**
+  String get continueWithOutLogin;
 
-  /// No description provided for @instant.
+  /// No description provided for @or.
   ///
   /// In en, this message translates to:
-  /// **'Instant calculations, guaranteed fairness with TicTic!'**
-  String get instant;
+  /// **'or'**
+  String get or;
 
-  /// No description provided for @annoying.
+  /// No description provided for @login.
   ///
   /// In en, this message translates to:
-  /// **'Tedious calculations? No thanks. Choose simplicity with TicTic!'**
-  String get annoying;
+  /// **'Login'**
+  String get login;
 
-  /// No description provided for @spendings.
+  /// No description provided for @register.
   ///
   /// In en, this message translates to:
-  /// **'TicTic : Your shared expenses made easy !'**
-  String get spendings;
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @text_slide_1.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial harmony in your groups, made simple!'**
+  String get text_slide_1;
+
+  /// No description provided for @text_slide_2.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant calculations, fairness guaranteed with TicTic!'**
+  String get text_slide_2;
+
+  /// No description provided for @text_slide_3.
+  ///
+  /// In en, this message translates to:
+  /// **'Tedious math? No thanks. Choose simplicity with TicTic!'**
+  String get text_slide_3;
+
+  /// No description provided for @text_slide_4.
+  ///
+  /// In en, this message translates to:
+  /// **'TicTic: Share your expenses effortlessly!'**
+  String get text_slide_4;
 
   /// No description provided for @semanticLabel.
   ///
@@ -136,6 +160,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create my account'**
   String get creatingAccount;
+
+  /// No description provided for @username_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get username_label;
+
+  /// No description provided for @username_placeholder.
+  ///
+  /// In en, this message translates to:
+  /// **'JohnDoe'**
+  String get username_placeholder;
+
+  /// No description provided for @user_email_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get user_email_label;
+
+  /// No description provided for @user_email_placeholder.
+  ///
+  /// In en, this message translates to:
+  /// **'John@Doe.be'**
+  String get user_email_placeholder;
+
+  /// No description provided for @user_password_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get user_password_label;
+
+  /// Error message when a form field is required.
+  ///
+  /// In en, this message translates to:
+  /// **'The field \"{field_name}\"is required'**
+  String form_field_required(String field_name);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

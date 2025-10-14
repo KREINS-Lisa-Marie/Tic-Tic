@@ -4,7 +4,8 @@ import '../../../constants/colors.dart';
 import '../../../constants/sizes.dart';
 
 class Bullet extends StatelessWidget {
-  const Bullet({super.key,
+  const Bullet({
+    super.key,
     required this.marginRight,
     required this.width,
     required this.color
@@ -22,8 +23,7 @@ class Bullet extends StatelessWidget {
           right: marginRight,
           bottom: kVerticalPaddingS
       ),
-      width:
-      width,
+      width: width,
       height: kVerticalPaddingXS,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(kBorderRadius),

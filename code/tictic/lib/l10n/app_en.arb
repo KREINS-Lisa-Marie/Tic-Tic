@@ -1,9 +1,36 @@
 {
   "appTitle": "Application TicTic (en)",
-  "harmony": "Financial harmony in your groups, made easy!",
-  "instant": "Instant calculations, guaranteed fairness with TicTic!",
-  "annoying": "Tedious calculations? No thanks. Choose simplicity with TicTic!",
-  "spendings": "TicTic : Your shared expenses made easy !",
+  "continueWithOutLogin": "Continue without login",
+  "or": "or",
+  "login": "Login",
+  "register": "Register",
+
+  "text_slide_1": "Financial harmony in your groups, made simple!",
+  "text_slide_2": "Instant calculations, fairness guaranteed with TicTic!",
+  "text_slide_3": "Tedious math? No thanks. Choose simplicity with TicTic!",
+  "text_slide_4": "TicTic: Share your expenses effortlessly!",
+
   "semanticLabel" : "The Logo of TicTic",
-  "creatingAccount":"Create my account"
+  "creatingAccount":"Create my account",
+
+  "username_label":"Username",
+
+  "username_placeholder":"JohnDoe",
+
+  "user_email_label":"Email",
+  "user_email_placeholder":"John@Doe.be",
+
+  "user_password_label":"Password",
+
+  "form_field_required": "The field \"{field_name}\"is required",
+
+  "@form_field_required": {
+    "description": "Error message when a form field is required.",
+    "placeholders": {
+      "field_name": {
+        "type": "String",
+        "example": "Username"
+      }
+    }
+  }
 }

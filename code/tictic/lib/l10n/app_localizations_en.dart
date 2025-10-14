@@ -12,20 +12,52 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Application TicTic (en)';
 
   @override
-  String get harmony => 'Financial harmony in your groups, made easy!';
+  String get continueWithOutLogin => 'Continue without login';
 
   @override
-  String get instant => 'Instant calculations, guaranteed fairness with TicTic!';
+  String get or => 'or';
 
   @override
-  String get annoying => 'Tedious calculations? No thanks. Choose simplicity with TicTic!';
+  String get login => 'Login';
 
   @override
-  String get spendings => 'TicTic : Your shared expenses made easy !';
+  String get register => 'Register';
+
+  @override
+  String get text_slide_1 => 'Financial harmony in your groups, made simple!';
+
+  @override
+  String get text_slide_2 => 'Instant calculations, fairness guaranteed with TicTic!';
+
+  @override
+  String get text_slide_3 => 'Tedious math? No thanks. Choose simplicity with TicTic!';
+
+  @override
+  String get text_slide_4 => 'TicTic: Share your expenses effortlessly!';
 
   @override
   String get semanticLabel => 'The Logo of TicTic';
 
   @override
   String get creatingAccount => 'Create my account';
+
+  @override
+  String get username_label => 'Username';
+
+  @override
+  String get username_placeholder => 'JohnDoe';
+
+  @override
+  String get user_email_label => 'Email';
+
+  @override
+  String get user_email_placeholder => 'John@Doe.be';
+
+  @override
+  String get user_password_label => 'Password';
+
+  @override
+  String form_field_required(String field_name) {
+    return 'The field \"$field_name\"is required';
+  }
 }

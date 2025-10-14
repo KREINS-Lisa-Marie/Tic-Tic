@@ -5,6 +5,7 @@ import '../../../constants/sizes.dart';
 
 class TextDivider extends StatelessWidget {
   const TextDivider({super.key, required this.text});
+
   final String text;
 
   @override

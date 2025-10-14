@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tictic/constants/fonts.dart';
+import 'package:tictic/constants/sizes.dart';
 
 import 'fonts.dart' show kButtonTextStyle;
 
@@ -77,12 +78,20 @@ final kAppTheme = ThemeData(
     filled: true,
     fillColor: kTertiaryColor.withValues(alpha: 0.1),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: kTertiaryColor),
+      gapPadding: 0,
+      borderRadius: BorderRadius.circular(kBorderRadiusInput),
+      borderSide: BorderSide(
+        width: kBorderWidth,
+        color: kBackgroundColor,
+      ),
     ),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(12),
-      borderSide: BorderSide(color: kSecondaryColor, width: 2),
+    gapPadding: 0,
+    borderRadius: BorderRadius.circular(kBorderRadiusInput),
+    borderSide: BorderSide(
+      width: kBorderWidth,
+      color: kMainColor,
     ),
+  ),
   ),
 );

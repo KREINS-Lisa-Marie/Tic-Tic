@@ -12,20 +12,52 @@ class AppLocalizationsFr extends AppLocalizations {
   String get appTitle => 'Application TicTic';
 
   @override
-  String get harmony => 'L’harmonie financière dans vos groupes, en toute simplicité !';
+  String get continueWithOutLogin => 'Continuer sans compte';
 
   @override
-  String get instant => 'Calculs instantanés, équité garantie avec TicTic !';
+  String get or => 'ou';
 
   @override
-  String get annoying => 'Calculs fastidieux ? Non merci. Optez pour la simplicité avec TicTic !';
+  String get login => 'Connexion';
 
   @override
-  String get spendings => 'TicTic : Vos dépenses partagées en toute simplicité !';
+  String get register => 'Inscription';
+
+  @override
+  String get text_slide_1 => 'L’harmonie financière dans vos groupes, en toute simplicité !';
+
+  @override
+  String get text_slide_2 => 'Calculs instantanés, équité garantie avec TicTic !';
+
+  @override
+  String get text_slide_3 => 'Calculs fastidieux ? Non merci. Optez pour la simplicité avec TicTic !';
+
+  @override
+  String get text_slide_4 => 'TicTic : Vos dépenses partagées en toute simplicité !';
 
   @override
   String get semanticLabel => 'Le Logo de TicTic';
 
   @override
   String get creatingAccount => 'Créer mon compte';
+
+  @override
+  String get username_label => 'Nom d’utilisateur';
+
+  @override
+  String get username_placeholder => 'JohnDoe';
+
+  @override
+  String get user_email_label => 'Email';
+
+  @override
+  String get user_email_placeholder => 'John@Doe.be';
+
+  @override
+  String get user_password_label => 'Mot de passe';
+
+  @override
+  String form_field_required(String field_name) {
+    return 'Le champs \"$field_name\"est requis.';
+  }
 }

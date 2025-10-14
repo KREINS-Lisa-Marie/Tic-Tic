@@ -8,20 +8,18 @@ import 'text_slider.dart';
 class TextSliderWithBullets extends StatefulWidget {
   const TextSliderWithBullets({super.key});
 
-
   @override
   State<TextSliderWithBullets> createState() => _TextSliderWithBulletsState();
 }
 
 class _TextSliderWithBulletsState extends State<TextSliderWithBullets> {
-
   final PageController _pageController = PageController(viewportFraction: 1);
 
   int _currentIdx = 0;
-  late final List<String> _items;
-  bool _itemsInitialized = false;
 
-  @override
+  /*late final List<String> _items;
+  bool _itemsInitialized = false;*/
+  /*  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 
@@ -43,28 +41,39 @@ class _TextSliderWithBulletsState extends State<TextSliderWithBullets> {
     ];
       _itemsInitialized = true;
     }
-  }
+  }*/
+
+  late final _items = [
+    AppLocalizations.of(context)!.text_slide_1,
+    AppLocalizations.of(context)!.text_slide_2,
+    AppLocalizations.of(context)!.text_slide_3,
+    AppLocalizations.of(context)!.text_slide_4,
+  ];
 
   @override
   Widget build(BuildContext context) {
-    if (!_itemsInitialized) {
+    /*    if (!_itemsInitialized) {
       // While waiting for didChangeDependencies to run
       return const SizedBox.shrink(); // or a loader if needed
-    }
-    return  Column(
+    }*/
+    return Column(
       children: [
-        TextSlider(pageController: _pageController, items: _items, currentIdx: _currentIdx, onPageChanged: (int index){
-          setState(() {
-            _currentIdx = index;
-          });
-        },
+        TextSlider(
+          pageController: _pageController,
+          items: _items,
+          currentIdx: _currentIdx,
+          onPageChanged: (int index) {
+            setState(() {
+              _currentIdx = index;
+            });
+          },
         ),
-        SizedBox(
-          height: kVerticalPadding,
+        SizedBox(height: kVerticalPadding),
+        Bullets(
+          items: _items,
+          pageController: _pageController,
+          currentIdx: _currentIdx,
         ),
-        Bullets(items: _items,
-            pageController: _pageController,
-            currentIdx: _currentIdx)
       ],
     );
   }
